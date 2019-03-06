@@ -18,6 +18,8 @@ public final class App {
     	//1st commit
     	//2nd commit
 
+    	
+    	
         String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
