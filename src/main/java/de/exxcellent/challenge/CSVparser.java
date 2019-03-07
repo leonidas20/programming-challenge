@@ -7,11 +7,13 @@ import java.io.IOException;
 public class CSVparser {
 	
 	String nameOftheCSVfile;
+	String fullRelativePath;
 	
 	
 	
 	public CSVparser(String nameOftheCSVfile) {
 		this.nameOftheCSVfile = nameOftheCSVfile;
+		this.fullRelativePath = "./src/main/resources//de/exxcellent/challenge//"+nameOftheCSVfile;
 	}
 
 
@@ -28,7 +30,7 @@ public class CSVparser {
 		    	int lineNumber = 0;
 		        String cvsSplitBy = ",";
 
-		        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+		        try (BufferedReader br = new BufferedReader(new FileReader(fullRelativePath))) {
 
 		      		int difference = -5000;
 		      		int finalDifference = 0;
@@ -76,15 +78,7 @@ public class CSVparser {
 		            e.printStackTrace();
 		        }
 		
-		
-		
-		
-		
-		
 		return dayWithSmallestTempSpread;
 		
-		
 	}
-	
-
 }
