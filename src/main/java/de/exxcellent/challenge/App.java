@@ -25,19 +25,14 @@ public final class App {
     	//2nd commit
     	//3rd commit
     	
-
-    	
         // In the corner case that 2 days have the same difference of temperature, the program will print the first day with the smallest
         // difference of temperature
     	CSVparser objCalculateTemperature = new CSVparser("weather.csv");
     	
         System.out.printf("Day with smallest temperature spread : Day %s%n", objCalculateTemperature.calculateColumns(1,2));
-
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+        //String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
         
-        
-      //  System.out.println(objCalculateTemperature.calculateColumns());
-        
+    	CSVparser objCalculateSmallestGoalSpread = new CSVparser("football.csv");
+        System.out.printf("Team with smallest goal spread       : %s%n", objCalculateSmallestGoalSpread.calculateColumns(5,6));
     }
 }
