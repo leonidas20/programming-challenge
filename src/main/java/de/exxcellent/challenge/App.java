@@ -28,6 +28,7 @@ public final class App {
       String csvFile = "./src/main/resources//de/exxcellent/challenge//weather.csv";
 
     	String line = "";
+    	int lineNumber = 1;
         String cvsSplitBy = ",";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -36,15 +37,31 @@ public final class App {
 
                 // use comma as delimiter
                 String[] columns = line.split(cvsSplitBy);
+            
+                int column1 = -10000;
+           		int column2 = -1000;
+          		int difference = -5000;
+  
+          		try {
+                column1 = Integer.valueOf(columns[1]);
+                column2 = Integer.valueOf(columns[2]);
+            	difference = column1 - column2;
+                
+                System.out.println("Number of Line: "+lineNumber +" column1   " + column1 +"  column2   "+column2 + " Difference "+difference);
+                lineNumber++;
+          		}
+                catch (NumberFormatException ex) {
+                	ex.printStackTrace();
+                }
 
-                System.out.println("Day " + columns[0]+" maximum temperature " + columns[1] + " , minimum temperature " + columns[2] + "]");
-
+                //System.out.println("Day " + columns[0]+" maximum temperature " + columns[1] + " , minimum temperature " + columns[2] + "]"+
+                //"Difference = " + difference   );
+           
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-    	
     	
         String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
