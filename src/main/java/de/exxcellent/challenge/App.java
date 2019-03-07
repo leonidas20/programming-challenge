@@ -31,7 +31,7 @@ public final class App {
         // difference of temperature
     	CSVparser objCalculateTemperature = new CSVparser("weather.csv");
     	
-        System.out.printf("Day with smallest temperature spread : Day %s%n", objCalculateTemperature.calculateColumns());
+        System.out.printf("Day with smallest temperature spread : Day %s%n", objCalculateTemperature.calculateColumns(1,2));
 
         String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);

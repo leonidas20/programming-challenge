@@ -15,7 +15,7 @@ public class CSVparser {
 	}
 
 
-	public int calculateColumns() {
+	public int calculateColumns(int col1, int col2) {
 		
 		   String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
 
@@ -25,7 +25,7 @@ public class CSVparser {
 		   
 		   
 		    	String line = "";
-		    	int lineNumber = 1;
+		    	int lineNumber = 0;
 		        String cvsSplitBy = ",";
 
 		        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -43,8 +43,8 @@ public class CSVparser {
 		           		int column2 = -1000;
 		  
 		          		try {
-		                column1 = Integer.valueOf(columns[1]);
-		                column2 = Integer.valueOf(columns[2]);
+		                column1 = Integer.valueOf(columns[col1]);
+		                column2 = Integer.valueOf(columns[col2]);
 		                currentDay = columns[0];
 		            	difference = column1 - column2;
 		                
@@ -54,7 +54,6 @@ public class CSVparser {
 		                if (lineNumber == 1) {
 		                	finalDifference = difference;
 		                	dayWithSmallestTempSpread =  currentDay;
-		                	System.out.println("finalDifference" + finalDifference);
 		                } else {
 		                	
 		                	if (difference < finalDifference ) {
@@ -67,6 +66,8 @@ public class CSVparser {
 		                
 		          		}
 		                catch (NumberFormatException ex) {
+		                	System.out.println("The line" +lineNumber +"could not be taken into consideration for the requested calculation ");
+			                lineNumber++;
 		                	ex.printStackTrace();
 		                }
 		            }
