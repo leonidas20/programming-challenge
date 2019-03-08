@@ -21,14 +21,9 @@ public class CSVparser {
 		
 		   String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
 
-		     //String csvFile = "./src/main/resources//de/exxcellent/challenge//weather.csv";
-		     String csvFile = "./src/main/resources//de/exxcellent/challenge//"+nameOftheCSVfile;
-
-		   
-		   
 		    	String line = "";
 		    	int lineNumber = 0;
-		        String cvsSplitBy = ",";
+		        final String cvsSplitBy = ",";
 
 		        try (BufferedReader br = new BufferedReader(new FileReader(fullRelativePath))) {
 
