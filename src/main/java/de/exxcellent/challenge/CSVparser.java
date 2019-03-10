@@ -45,8 +45,9 @@ public class CSVparser {
 		                currentDay = columns[0];
 		            	difference = Math.abs(column1 - column2);
 		                
-		                System.out.println("LineNumber:  "+lineNumber +"  col1Value  " + column1 +"  col2Value  "+ column2 + "  Difference  "+ difference +
-		                		"  Current Day  " + currentDay + "  finalDifference  " + finalDifference);
+		               // Used only for debugging purposes	
+		               // System.out.println("LineNumber:  "+lineNumber +"  col1Value  " + column1 +"  col2Value  "+ column2 + "  Difference  "+ difference +
+		               //		"  Current Day  " + currentDay + "  finalDifference  " + finalDifference);
 		                
 		                if (lineNumber == 1) {
 		                	finalDifference = difference;
@@ -63,9 +64,11 @@ public class CSVparser {
 		                
 		          		}
 		                catch (NumberFormatException ex) {
-		                	System.out.println("The line  " +lineNumber +"  could not be taken into consideration for the requested calculation ");
+		                	
+		                	//used only for debugging purposes
+		                	//System.out.println("The line  " +lineNumber +"  could not be taken into consideration for the requested calculation ");
 			                lineNumber++;
-		                	ex.printStackTrace();
+		                	//ex.printStackTrace();
 		                }
 		            }
 
